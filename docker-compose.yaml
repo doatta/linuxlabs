@@ -1,0 +1,11 @@
+services:
+  jupyter:
+    build: jupyter/
+    ports:
+      - "8888:8888"
+
+  node1:
+    build: node1/
+    privileged: true
+    depends_on:
+      - jupyter
